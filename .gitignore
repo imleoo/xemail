@@ -1,0 +1,48 @@
+# 密钥与本地配置（.env 内含真实 Resend key 与 ADMIN_TOKEN，只提交 .env.example）
+.env
+.env.*
+!.env.example
+
+# 运行时数据：SQLite 库及其 WAL/SHM/日志文件
+/data/
+*.db
+*.db-wal
+*.db-shm
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# 构建产物（web/dist 需保留 .gitkeep，go:embed 要求目录存在）
+/bin/
+*.exe
+web/dist/*
+!web/dist/.gitkeep
+
+# 依赖
+node_modules/
+
+# 测试、覆盖率与日志
+*.test
+*.out
+coverage.*
+/web/coverage/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# 前端类型检查缓存
+*.tsbuildinfo
+
+# Go 本地工作区
+go.work
+go.work.sum
+
+# 编辑器与系统文件
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+
+# Claude Code 本地设置（不含团队共享配置）
+.claude/settings.local.json
